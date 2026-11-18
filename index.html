@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>Generator Skill</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+</html>
+<body>
+    <div class="kotak-mesin">
+        <h1>Generator Skill</h1>
+
+
+        <p>
+            Masukkan namamu untuk melihat skill tersembunyimu!
+        </p>
+
+
+        <input
+        type="text"
+        id="namaInput"
+        placeholder="Ketik namamu..."
+        >
+        <button onclick="cekSkill()">
+            Cek Sekarang!
+        </button>
+
+
+        <h2 id="hasilSkill">
+            Skill belum terdeteksi...
+        </h2>
+        <img
+        id="fotoSkill"
+        src="https://placehold.co/200x200?text=?"
+        width="400"
+        >
+     </div>
+
+<script>
+    // Kode JavaScript ditulis di sini
+    function cekSkill() {
+        let nama= document.getElementById("namaInput").value;
+    
+    let daftarSkill = [
+        "Bisa Tidur Di Segala Situasi",
+        "Tukang Sotoy",
+        "Ahli Mendeteksi Gosip",
+        "Jago Ngibul",
+        "Jago Ngabisin Duit",
+    ];
+
+
+    let daftarGambar = [
+        " https://plus.unsplash.com/premium_photo-1702531819085-4815383bd175?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+        "https://www.shutterstock.com/image-photo/palm-fashion-portrait-woman-studio-260nw-2723721301.jpg",
+        "https://www.shutterstock.com/image-photo/portrait-teenage-girls-gossiping-on-260nw-2783385861.jpg",
+        "https://d1vbn70lmn1nqe.cloudfront.net/prod/wp-content/uploads/2022/11/03042139/X-Tanda-Orang-Sedang-Berbohong-yang-Dapat-Dikenali.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRq9TrVMslBT8JkL4stLSXpw2I1i_ZX2im4eTVn7HtuPPjYhP8FrT07rMw&s=10",
+    ];
+    let acak = Math.floor(Math.random() * daftarSkill.length);
+    let skillPilihan = daftarSkill[acak];
+    let gambarPilihan = daftarGambar[acak];
+    document.getElementById("hasilSkill").innerText =
+    nama + ", skill unikmu:" + skillPilihan;
+
+
+    document.getElementById("fotoSkill").src = gambarPilihan;
+    }
+</script>
+</body>
